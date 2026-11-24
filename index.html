@@ -1,0 +1,835 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090810">
+  <meta name="description" content="UltimateTrainer creates innovative gaming tools, software and utilities. Explore our applications, downloads and latest updates.">
+  <title>UltimateTrainer | Gaming Tools & Software</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090810;
+      --surface: #11101b;
+      --surface2: #171525;
+      --purple: #9147ff;
+      --violet: #b36aff;
+      --text: #f5f2ff;
+      --muted: #9994aa;
+      --border: rgba(174, 119, 255, .15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .glow {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: #812cff;
+      filter: blur(170px);
+      opacity: .13;
+      pointer-events: none;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 8, 16, .88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--violet);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-button, .button-primary {
+      background: linear-gradient(110deg, #792aff, #ae65ff);
+      color: white !important;
+      padding: 11px 19px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      border: none;
+      display: inline-block;
+      transition: .2s;
+      cursor: pointer;
+    }
+
+    .nav-button:hover, .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px #8d39ff55;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      color: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 610px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero .glow {
+      top: 30px;
+      right: -100px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding: 105px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #c69bff;
+      background: #8d42ff15;
+      border: 1px solid #a35aff35;
+      border-radius: 30px;
+      padding: 8px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ac68ff;
+      box-shadow: 0 0 12px #ac68ff;
+    }
+
+    h1 {
+      font-size: clamp(46px, 7vw, 82px);
+      line-height: 1.04;
+      letter-spacing: -5px;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      background: linear-gradient(100deg, #a76aff, #e0bfff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 570px;
+      margin-bottom: 35px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .button-secondary {
+      display: inline-block;
+      padding: 11px 19px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .button-secondary:hover {
+      background: var(--surface2);
+      border-color: var(--purple);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-heading {
+      margin-bottom: 43px;
+    }
+
+    .section-label {
+      color: var(--violet);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: 800;
+      letter-spacing: -1.8px;
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 560px;
+    }
+
+    /* APP CARDS */
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .app-card {
+      background: linear-gradient(145deg, #171426, #100f18);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 28px;
+      transition: .25s;
+    }
+
+    .app-card:hover {
+      transform: translateY(-5px);
+      border-color: #9850ff80;
+      box-shadow: 0 15px 45px #00000055;
+    }
+
+    .app-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #963cff, #4c1b96);
+      border-radius: 13px;
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 22px;
+      box-shadow: 0 5px 25px #8b35ff40;
+    }
+
+    .app-card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .app-card p {
+      font-size: 13px;
+      color: var(--muted);
+      min-height: 65px;
+      margin-bottom: 20px;
+    }
+
+    .card-link {
+      color: #bd91ff;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* DOWNLOADS */
+
+    .downloads {
+      background: linear-gradient(180deg, #100e19, #0c0b13);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .download-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .download-panel p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 7px;
+    }
+
+    .download-panel .button-primary {
+      white-space: nowrap;
+    }
+
+    /* UPDATE AND NEWS */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .info-card {
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+
+    .info-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 10px;
+      color: #c69bff;
+      background: #963cff1c;
+      padding: 5px 9px;
+      border-radius: 5px;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    /* SUPPORT */
+
+    .support-box {
+      text-align: center;
+      padding: 60px 30px;
+      background: radial-gradient(ellipse at top, #51218c40, transparent 70%), var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .support-box p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 530px;
+      margin: 0 auto 25px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: #08070e;
+      padding: 55px 0 25px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    .footer-brand {
+      max-width: 300px;
+    }
+
+    .footer-brand p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 55px;
+    }
+
+    .footer-column h4 {
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a:hover {
+      color: var(--violet);
+    }
+
+    .disclaimer {
+      border-top: 1px solid var(--border);
+      padding: 23px 0;
+      color: #777184;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      color: #777184;
+      font-size: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 850px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        padding: 25px 5%;
+        background: #0c0a15;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 580px) {
+      section {
+        padding: 70px 0;
+      }
+
+      h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .app-grid, .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .download-panel {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-links {
+        gap: 30px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="#" class="logo">ULTIMATE<span>TRAINER</span></a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#apps">Applications</a>
+      <a href="#downloads">Downloads</a>
+      <a href="#updates">Updates</a>
+      <a href="#documentation">Documentation</a>
+      <a href="#news">News</a>
+      <a href="contact.html">Contact</a>
+      <a href="#downloads" class="nav-button">Explore Apps</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="glow"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Independent software development</div>
+
+        <h1>
+          Built for the<br>
+          <span>Next Level.</span>
+        </h1>
+
+        <p class="hero-description">
+          Welcome to UltimateTrainer. Explore innovative gaming tools,
+          powerful software and utilities designed to enhance your experience.
+          Built with performance, functionality and the community in mind.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#apps" class="button-primary">Explore Applications ↗</a>
+          <a href="#about" class="button-secondary">Discover UltimateTrainer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-label">Who we are</div>
+        <h2>Technology without limits.</h2>
+        <p class="section-description">
+          UltimateTrainer is an independent software brand focused on
+          developing useful applications, gaming utilities and tools.
+          Our goal is to create software that is accessible, practical
+          and enjoyable to use.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="apps">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-label">Our software</div>
+        <h2>Explore our applications.</h2>
+        <p class="section-description">
+          Discover the tools and applications developed under the
+          UltimateTrainer brand.
+        </p>
+      </div>
+
+      <div class="app-grid">
+
+        <article class="app-card">
+          <div class="app-icon">UT</div>
+          <h3>UltimateTrainer</h3>
+          <p>
+            An independent gaming plugin project with tools designed
+            to expand and customize your training experience.
+          </p>
+          <a href="#downloads" class="card-link">Explore project ↗</a>
+        </article>
+
+        <article class="app-card">
+          <div class="app-icon">+</div>
+          <h3>More applications</h3>
+          <p>
+            New applications and utilities are in development.
+            Check back for upcoming releases.
+          </p>
+          <a href="#news" class="card-link">Stay updated ↗</a>
+        </article>
+
+        <article class="app-card">
+          <div class="app-icon">+</div>
+          <h3>Coming soon</h3>
+          <p>
+            We're always exploring new ideas and developing
+            additional software projects.
+          </p>
+          <a href="#news" class="card-link">Latest announcements ↗</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="downloads" id="downloads">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-label">Get started</div>
+        <h2>Downloads.</h2>
+        <p class="section-description">
+          Find official application downloads and future software releases here.
+        </p>
+      </div>
+
+      <div class="download-panel">
+        <div>
+          <h3>UltimateTrainer Downloads</h3>
+          <p>Official downloads and release information will appear here.</p>
+        </div>
+        <a href="contact.html" class="button-primary">Coming Soon</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="updates">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-label">Development</div>
+        <h2>Latest updates.</h2>
+        <p class="section-description">
+          Follow development progress, new features and software improvements.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="tag">Development</span>
+          <h3>Website launch</h3>
+          <p>
+            The official UltimateTrainer website is being built.
+            More information and releases will be published here.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <span class="tag">Updates</span>
+          <h3>More updates coming</h3>
+          <p>
+            Check back for application updates, release notes
+            and development announcements.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="documentation">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-label">Knowledge base</div>
+        <h2>Documentation & tutorials.</h2>
+        <p class="section-description">
+          Installation instructions, setup guides, troubleshooting
+          and detailed information about our applications.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="tag">Guides</span>
+          <h3>Getting started</h3>
+          <p>Step-by-step instructions for getting started with our software.</p>
+        </article>
+
+        <article class="info-card">
+          <span class="tag">Support</span>
+          <h3>Troubleshooting</h3>
+          <p>Helpful information for resolving common issues.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-label">What's happening</div>
+        <h2>News & announcements.</h2>
+        <p class="section-description">
+          Stay informed about upcoming projects, releases
+          and important announcements.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <span class="tag">Announcements</span>
+        <h3>Welcome to UltimateTrainer.</h3>
+        <p>
+          This is the beginning of our official website.
+          New announcements and project information will be published here.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="container">
+      <div class="support-box">
+        <div class="section-label">Need assistance?</div>
+        <h2>We're here to help.</h2>
+        <p>
+          Have a question, found a problem or need assistance
+          with one of our applications? Get in touch.
+        </p>
+        <a href="contact.html" class="button-primary">Contact UltimateTrainer ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo">ULTIMATE<span>TRAINER</span></a>
+        <p>
+          Independent software development.
+          Built for gamers, creators and technology enthusiasts.
+        </p>
+      </div>
+
+      <div class="footer-links">
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <a href="#apps">Applications</a>
+          <a href="#downloads">Downloads</a>
+          <a href="#updates">Updates</a>
+          <a href="#news">News</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <a href="#documentation">Documentation</a>
+          <a href="#support">Support</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Notice</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Independent Project Disclaimer:</strong>
+      UltimateTrainer is an independent third-party project and is
+      not affiliated with, endorsed by, sponsored by, or otherwise
+      associated with Psyonix LLC or Epic Games, Inc.
+      Rocket League and related trademarks are the property of
+      their respective owners. This website and its projects are
+      independently developed.
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> UltimateTrainer. All rights reserved.</span>
+      <span>Independently developed.</span>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+  });
+
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>

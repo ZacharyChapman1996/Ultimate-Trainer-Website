@@ -17,7 +17,7 @@
     .container{width:min(1080px,90%);margin:auto}
     header{position:sticky;top:0;z-index:10;background:rgba(9,8,16,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
     nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .logo{font-size:20px;font-weight:900;letter-spacing:-1px}.logo span{color:var(--violet)}
+    .logo{display:inline-flex;align-items:center;gap:10px;font-size:20px;font-weight:900;letter-spacing:-1px}.logo span{color:var(--violet)}.logo-mark{width:36px;height:36px;object-fit:contain;flex:0 0 auto}
     .back{color:#c49aff;font-size:13px;font-weight:700}
     .hero{position:relative;overflow:hidden;padding:100px 0 85px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at 75% 15%,#702bc833,transparent 45%)}
     .eyebrow,.label{color:#c69bff;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
@@ -52,7 +52,7 @@
   </style>
 </head>
 <body>
-<header><div class="container"><nav><a class="logo" href="index.html">ULTIMATE<span>TRAINER</span></a><a class="back" href="index.html">← Back to website</a></nav></div></header>
+<header><div class="container"><nav><a class="logo" href="index.html"><img class="logo-mark" src="https://raw.githubusercontent.com/ZacharyChapman1996/Ultimate-Trainer-Main/main/assets/ultimate_trainer_icon.png" alt="" aria-hidden="true">ULTIMATE<span>TRAINER</span></a><a class="back" href="index.html">← Back to website</a></nav></div></header>
 <main>
   <section class="hero">
     <div class="container">
@@ -69,7 +69,7 @@
       <div class="grid">
         <article class="card"><div class="icon">+</div><h3>Optional upgrade</h3><p>Premium is intended to add optional capabilities without making a paid subscription a requirement to use the standard UltimateTrainer experience.</p></article>
         <article class="card"><div class="icon">⚙</div><h3>Designed for the app</h3><p>Premium access is being designed around the UltimateTrainer desktop application, with subscription status checked by the service rather than trusted solely from a local setting.</p></article>
-        <article class="card"><div class="icon">↻</div><h3>Flexible durations</h3><p>Planned subscription terms include short and longer durations, so players can choose a period that suits them once pricing is finalized.</p></article>
+        <article class="card"><div class="icon">↻</div><h3>Two plan options</h3><p>Choose between the planned weekly subscription or the lower-cost monthly option. Both are designed to renew automatically until cancelled.</p></article>
       </div>
     </div>
   </section>
@@ -84,8 +84,6 @@
       <div class="details">
         <article class="detail"><h3>Automatic renewal and cancellation</h3><p>Both the $1.99 weekly and $4.99 monthly subscriptions automatically renew at the end of each billing period. You can cancel at any time to stop future renewals. Your Premium access remains active until the end of the period you have already paid for.</p></article>
         <article class="detail"><h3>Subscription time</h3><p>Under the planned model, subscription time continues to run during the full paid period, whether or not the UltimateTrainer application is open.</p></article>
-        <article class="detail"><h3>Account requirements</h3><p>The goal is to avoid requiring users to create a separate website account. The final activation and verification process will be explained before launch.</p></article>
-        <article class="detail"><h3>Installation policy</h3><p>The current design is intended to authorize one active installation per subscription, with a controlled replacement process if a user changes computers or reinstalls Windows. Final rules will be published before launch.</p></article>
       </div>
     </div>
   </section>

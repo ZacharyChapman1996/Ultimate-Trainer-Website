@@ -44,17 +44,16 @@
       line-height: 1.6;
     }
 
-    body::before {
+    body::after {
       content: "";
       position: fixed;
       inset: 0;
-      z-index: 0;
+      z-index: 9999;
       pointer-events: none;
-      background: url("https://raw.githubusercontent.com/ZacharyChapman1996/Ultimate-Trainer-Main/main/assets/ultimate_trainer_icon.png") center 48% / min(72vw, 820px) auto no-repeat;
-      opacity: .055;
+      background: url("https://raw.githubusercontent.com/ZacharyChapman1996/Ultimate-Trainer-Main/main/assets/ultimate_trainer_icon.png") center 48% / min(68vw, 760px) auto no-repeat;
+      opacity: .22;
+      mix-blend-mode: screen;
     }
-
-    body > * { position: relative; z-index: 1; }
 
     a {
       color: inherit;
@@ -110,7 +109,7 @@
       white-space: nowrap;
     }
 
-    .logo-mark { width: 36px; height: 36px; object-fit: contain; flex: 0 0 auto; }
+    .logo-mark { width: 44px; height: 44px; object-fit: contain; flex: 0 0 auto; mix-blend-mode: screen; filter: drop-shadow(0 0 7px #8d39ff70); }
 
     .logo span {
       color: var(--violet);

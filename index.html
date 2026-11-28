@@ -36,12 +36,25 @@
     }
 
     body {
+      position: relative;
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
       line-height: 1.6;
     }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: url("https://raw.githubusercontent.com/ZacharyChapman1996/Ultimate-Trainer-Main/main/assets/ultimate_trainer_icon.png") center 48% / min(72vw, 820px) auto no-repeat;
+      opacity: .055;
+    }
+
+    body > * { position: relative; z-index: 1; }
 
     a {
       color: inherit;
@@ -88,11 +101,16 @@
     }
 
     .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-size: 21px;
       font-weight: 900;
       letter-spacing: -1px;
       white-space: nowrap;
     }
+
+    .logo-mark { width: 36px; height: 36px; object-fit: contain; flex: 0 0 auto; }
 
     .logo span {
       color: var(--violet);
@@ -529,7 +547,7 @@
 
 <header>
   <div class="container navbar">
-    <a href="#" class="logo">ULTIMATE<span>TRAINER</span></a>
+    <a href="#" class="logo"><img class="logo-mark" src="https://raw.githubusercontent.com/ZacharyChapman1996/Ultimate-Trainer-Main/main/assets/ultimate_trainer_icon.png" alt="" aria-hidden="true">ULTIMATE<span>TRAINER</span></a>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
       ☰
@@ -768,7 +786,7 @@
 
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#" class="logo">ULTIMATE<span>TRAINER</span></a>
+        <a href="#" class="logo"><img class="logo-mark" src="https://raw.githubusercontent.com/ZacharyChapman1996/Ultimate-Trainer-Main/main/assets/ultimate_trainer_icon.png" alt="" aria-hidden="true">ULTIMATE<span>TRAINER</span></a>
         <p>
           Independent software development.
           Built for gamers, creators and technology enthusiasts.
